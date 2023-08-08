@@ -33,7 +33,6 @@ import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.uimanager.ViewManager;
 import com.facebook.react.bridge.JavaScriptModule;
 import com.shahenlibrary.Trimmer.TrimmerManager;
-import com.shahenlibrary.VideoPlayer.VideoPlayerViewManager;
 
 public class RNVideoProcessingPackage implements ReactPackage {
     @Override
@@ -49,8 +48,6 @@ public class RNVideoProcessingPackage implements ReactPackage {
 
     @Override
     public List<ViewManager> createViewManagers(ReactApplicationContext reactContext) {
-      return Arrays.<ViewManager>asList(
-          new VideoPlayerViewManager()
-      );
+      throw new RuntimeException("RNVideoProcessingPackage does not support UI components");
     }
 }
