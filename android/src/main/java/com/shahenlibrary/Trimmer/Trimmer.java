@@ -173,7 +173,7 @@ public class Trimmer {
 
   }
 
-  public static void getPreviewImages(String path, Promise promise, ReactApplicationContext ctx) {
+  public static void getPreviewImages(String path, Promise promise, ReactApplicationContext ctx) throws IOException {
     FFmpegMediaMetadataRetriever retriever = new FFmpegMediaMetadataRetriever();
     try {
       if (VideoEdit.shouldUseURI(path)) {
@@ -350,7 +350,7 @@ public class Trimmer {
     return sizes;
   }
 
-  private static ReadableMap getVideoRequiredMetadata(String source, Context ctx) {
+  private static ReadableMap getVideoRequiredMetadata(String source, Context ctx) throws IOException {
     Log.d(LOG_TAG, "getVideoRequiredMetadata: " + source);
     MediaMetadataRetriever retriever = new MediaMetadataRetriever();
     try {
